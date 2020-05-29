@@ -4,37 +4,42 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    public PlayerMovement pMove;
+    [SerializeField] private PlayerMovement pMove;
+    [SerializeField] private GameManager gManager;
+    private bool freeze = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (!freeze)
         {
-            //pMove.Move(-1);
-            pMove.Move(Vector2.left);
-        }
+            //move left or right
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+            {
+                pMove.Move();
+            }
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            //pMove.Move(1);
-            pMove.Move(Vector2.right);
-        }
+            //jumping
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space))
+            {
+                pMove.Jump();
+            }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            pMove.Jump();
-        }
+            //falling down
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                pMove.Fall();
+            }
 
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            pMove.Fall();
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            pMove.Jump();
-        }
-
+    public void Freeze()
+    {
+        freeze = true;
+    }
+    public void UnFreeze()
+    {
+        freeze = false;
     }
 }
