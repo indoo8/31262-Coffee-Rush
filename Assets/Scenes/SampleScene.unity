@@ -805,12 +805,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5218351707047332168}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2126310383 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5235997744443094972, guid: 7484e8db706b04a4b9d03222575e6acc,
-    type: 3}
-  m_PrefabInstance: {fileID: 5218351707047332168}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &829667494963986739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1035,14 +1029,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1132524990, guid: 7484e8db706b04a4b9d03222575e6acc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 1132524990, guid: 7484e8db706b04a4b9d03222575e6acc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.099
-      objectReference: {fileID: 0}
     - target: {fileID: 2897382501306751899, guid: 7484e8db706b04a4b9d03222575e6acc,
         type: 3}
       propertyPath: m_Name
@@ -1103,31 +1089,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2897382501306751910, guid: 7484e8db706b04a4b9d03222575e6acc,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 2897382501306751910, guid: 7484e8db706b04a4b9d03222575e6acc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282620133111599172, guid: 7484e8db706b04a4b9d03222575e6acc,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282620133111599172, guid: 7484e8db706b04a4b9d03222575e6acc,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 6528388165645133617, guid: 7484e8db706b04a4b9d03222575e6acc,
-        type: 3}
-      propertyPath: pAnimator
-      value: 
-      objectReference: {fileID: 2126310383}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7484e8db706b04a4b9d03222575e6acc, type: 3}
 --- !u!1001 &7060362546563594867

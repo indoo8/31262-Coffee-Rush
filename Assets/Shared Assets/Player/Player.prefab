@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132524989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.012, y: -0.158, z: -0.92102575}
+  m_LocalPosition: {x: 0.005, y: -0.099, z: -0.92102575}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2897382501306751910}
@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 2897382501306751899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.9355029, y: 0.41161424, z: -0.8769531}
-  m_LocalScale: {x: 1.5625, y: 1.5625, z: 1}
+  m_LocalScale: {x: 3.125, y: 3.125, z: 1}
   m_Children:
   - {fileID: 1132524990}
   m_Father: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundCheck: {fileID: 1132524990}
-  pAnimator: {fileID: 0}
+  pAnimator: {fileID: 5235997744443094972}
 --- !u!50 &1153471964343306684
 Rigidbody2D:
   serializedVersion: 4
@@ -176,9 +176,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01, y: 0}
   serializedVersion: 2
-  m_Radius: 0.16
+  m_Radius: 0.08
 --- !u!95 &5235997744443094972
 Animator:
   serializedVersion: 3
