@@ -14,6 +14,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
     private Vector2 refVel = Vector2.zero;
+    [SerializeField] private Animator pAnimator;
+
+    private bool grounded;
+    private float xSpeed;
+    private bool faceRight = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        grounded = CheckGrounded();
+        xSpeed = rb2d.velocity.x;
+        pAnimator.SetBool("grounded", grounded);
+        pAnimator.SetFloat("speed", Mathf.Abs(xSpeed));
+
+        if (faceRight && xSpeed < 0)
+            Flip();
+        if (!faceRight && xSpeed > 0)
+            Flip();
+        
     }
 
     public bool CheckGrounded()
@@ -57,5 +72,13 @@ public class PlayerMovement : MonoBehaviour
     public void Fall()
     {
         
+    }
+
+    private void Flip()
+    {
+        faceRight = !faceRight;
+        Vector3 scale = playerT.localScale;
+        scale.x *= -1;
+        playerT.localScale = scale;
     }
 }

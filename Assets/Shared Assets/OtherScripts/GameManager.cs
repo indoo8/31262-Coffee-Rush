@@ -5,9 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject[] checkpoints;
-    [SerializeField] private GameObject[] levelObjects;
-    [SerializeField] private GameObject currentCheckpoint;
+    [SerializeField] private Transform playerStartPos;
+    [SerializeField] private GameObject[] respawningObjects;
     private InputManager iManager;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +24,12 @@ public class GameManager : MonoBehaviour
     {
 
         iManager.UnFreeze();
+    }
+
+    public void PlayerDie()
+    {
+        iManager.Freeze();
+        Invoke("Respawn", 3f);
     }
 
     public void NewCheckpoint()
