@@ -14,21 +14,15 @@ public class InputManager : MonoBehaviour
         if (!freeze)
         {
             //move left or right
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetButton("Horizontal"))
             {
                 pMove.Move();
             }
 
             //jumping
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Jump"))
             {
                 pMove.Jump();
-            }
-
-            //falling down
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                pMove.Fall();
             }
 
         }
