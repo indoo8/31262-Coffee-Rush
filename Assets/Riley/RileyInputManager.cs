@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class RileyInputManager : MonoBehaviour
 {
     [SerializeField] private PlayerMovement pMove;
-    [SerializeField] private GameManagerTutorial gManager;
+    [SerializeField] private RileyGameManager gManager;
     private bool freeze = false;
 
     // Update is called once per frame

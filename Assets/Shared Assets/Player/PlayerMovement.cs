@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float groundCheckRadius = 0.05f, lowJumpMultiplier = 2, fallMultiplier = 2, jump_height = 5, friction = 1, acceleration = 1, max_speed = 20, smoothTime = 0.5f;
+    [SerializeField] private float groundCheckRadius = 0.05f, lowJumpMultiplier = 2, fallMultiplier = 2, jump_height = 5, max_speed = 20, smoothTime = 0.5f;
     private Vector2 speed = Vector2.down;
     private Transform playerT;
     public Rigidbody2D rb2d;
@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         {
             grounded = CheckGrounded();
         }
+
         xSpeed = rb2d.velocity.x;
         pAnimator.SetBool("grounded", grounded);
         pAnimator.SetFloat("speed", Mathf.Abs(xSpeed));
