@@ -19,7 +19,7 @@ public class GameManagerTutorial : MonoBehaviour
         player.transform.position = playerStartPos.position;
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
-
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -34,6 +34,7 @@ public class GameManagerTutorial : MonoBehaviour
         player.transform.position = playerStartPos.position;
         iManager.UnFreeze();
         deathMessage.SetActive(false);
+        pauseMenu.SetActive(false);
         dead = false;
 
         for (int i = 0; i < coffeeBeans.Length; i++)
@@ -86,13 +87,14 @@ public class GameManagerTutorial : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-        //Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
 
     }
 }

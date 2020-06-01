@@ -21,6 +21,7 @@ public class RileyGameManager : MonoBehaviour
         risingWater.ResetWater();
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
+        Time.timeScale = 1;
         
     }
 
@@ -92,13 +93,14 @@ public class RileyGameManager : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-        //Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
 
     }
 }

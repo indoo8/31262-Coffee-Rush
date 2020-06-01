@@ -33,7 +33,7 @@ public class LevelSelector : MonoBehaviour
 
     public void quitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-        //Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 }
