@@ -26,10 +26,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!grounded)
-        {
-            grounded = CheckGrounded();
-        }
+        grounded = CheckGrounded();
 
         xSpeed = rb2d.velocity.x;
         pAnimator.SetBool("grounded", grounded);
