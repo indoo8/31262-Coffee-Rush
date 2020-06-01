@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: jump
+  m_Name: CoffeeMachineIdle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,10 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -8910566863359650320, guid: c6429f29a35a0ee428a765e1740dbd70,
+      value: {fileID: -8480838119780344923, guid: d3d872a23e1439741b8affc0f561fc14,
+        type: 3}
+    - time: 1
+      value: {fileID: -8480838119780344923, guid: d3d872a23e1439741b8affc0f561fc14,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -41,13 +44,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -8910566863359650320, guid: c6429f29a35a0ee428a765e1740dbd70, type: 3}
+    - {fileID: -8480838119780344923, guid: d3d872a23e1439741b8affc0f561fc14, type: 3}
+    - {fileID: -8480838119780344923, guid: d3d872a23e1439741b8affc0f561fc14, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 1.0166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

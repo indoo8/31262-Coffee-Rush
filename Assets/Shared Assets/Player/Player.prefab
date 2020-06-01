@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132524989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.005, y: -0.099, z: -0.92102575}
+  m_LocalPosition: {x: 0.005, y: -0.092, z: -0.92102575}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2897382501306751910}
@@ -102,12 +102,12 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 36001627
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -7069975434564055322, guid: c6429f29a35a0ee428a765e1740dbd70,
     type: 3}
-  m_Color: {r: 0.1527234, g: 0.9811321, b: 0.6816323, a: 1}
+  m_Color: {r: 0.8509804, g: 0.36862746, b: 0.12156863, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -130,12 +130,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheckRadius: 0.1
-  gravity: 2
-  jump_height: 7.5
-  friction: 1
-  acceleration: 10
-  max_speed: 15
-  smoothTime: 0.5
+  lowJumpMultiplier: 2
+  fallMultiplier: 2
+  jump_height: 10
+  max_speed: 10
+  smoothTime: 0.2
   rb2d: {fileID: 1153471964343306684}
   groundLayer:
     serializedVersion: 2
@@ -157,7 +156,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -176,9 +175,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01, y: 0}
+  m_Offset: {x: 0.015, y: 0}
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Radius: 0.1
 --- !u!95 &5235997744443094972
 Animator:
   serializedVersion: 3
