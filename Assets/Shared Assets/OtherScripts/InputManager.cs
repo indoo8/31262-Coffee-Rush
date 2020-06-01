@@ -27,12 +27,24 @@ public class InputManager : MonoBehaviour
 
         }
 
-        if (freeze)
+        if (gManager.dead)
         {
-            if (Input.GetButton("Submit"))
+            if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Cancel"))
             {
                 UnFreeze();
                 gManager.Respawn();
+            }
+        }
+
+        else if (Input.GetButtonDown("Cancel"))
+        {
+            if (gManager.paused)
+            {
+                gManager.ResumeGame();
+            }
+            else
+            {
+                gManager.PauseGame();
             }
         }
     }

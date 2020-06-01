@@ -201,6 +201,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: JakeLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 1296051455481143697, guid: 264afb6d0016ef84aac0184fb6e04ae4,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8071056557818784774, guid: 264afb6d0016ef84aac0184fb6e04ae4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -615,6 +620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GavinLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296051455481143697, guid: 264afb6d0016ef84aac0184fb6e04ae4,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8071056557818784774, guid: 264afb6d0016ef84aac0184fb6e04ae4,
         type: 3}
@@ -1069,6 +1079,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HeinLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296051455481143697, guid: 264afb6d0016ef84aac0184fb6e04ae4,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8071056557818784774, guid: 264afb6d0016ef84aac0184fb6e04ae4,
         type: 3}
