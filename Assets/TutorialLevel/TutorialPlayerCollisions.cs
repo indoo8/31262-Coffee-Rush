@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCollisionsTutorial : MonoBehaviour
+public class TutorialPlayerCollisions : MonoBehaviour
 {
-    public GameManagerTutorial gManager;
+    public TutorialGameManager gManager;
 
     private void Start()
     {

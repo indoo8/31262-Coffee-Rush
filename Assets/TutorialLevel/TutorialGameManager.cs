@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManagerTutorial : MonoBehaviour
+public class TutorialGameManager : MonoBehaviour
 {
     [SerializeField] private GameObject player, deathMessage, pauseMenu;
     [SerializeField] private Transform playerStartPos;

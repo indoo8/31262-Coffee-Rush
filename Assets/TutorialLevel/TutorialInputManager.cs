@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class TutorialInputManager : MonoBehaviour
 {
     [SerializeField] private PlayerMovement pMove;
-    [SerializeField] private GameManagerTutorial gManager;
+    [SerializeField] private TutorialGameManager gManager;
     private bool freeze = false;
 
     // Update is called once per frame

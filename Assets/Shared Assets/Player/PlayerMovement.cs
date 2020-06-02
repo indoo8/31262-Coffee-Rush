@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float groundCheckRadius = 0.05f, lowJumpMultiplier = 2, fallMultiplier = 2, jump_height = 5, max_speed = 20, smoothTime = 0.5f;
+    [SerializeField] private float groundCheckRadius = 0.05f,h_friction_multiplier = 1, lowJumpMultiplier = 2, fallMultiplier = 2, jump_height = 5, max_speed = 20, smoothTime = 0.5f;
     private Vector2 speed = Vector2.down;
     private Transform playerT;
     public Rigidbody2D rb2d;
@@ -37,13 +37,28 @@ public class PlayerMovement : MonoBehaviour
         if (!faceRight && xSpeed > 0)
             Flip();
 
+        //fall faster then you jump
         if (rb2d.velocity.y < 0)
         {
             rb2d.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplier * Time.deltaTime;
         }
+        //hold jump to go higher
         else if (rb2d.velocity.y > 0 && !Input.GetButton("Jump"))
         {
             rb2d.velocity += Vector2.up * Physics2D.gravity.y * lowJumpMultiplier * Time.deltaTime;
+        }
+
+
+        if (System.Math.Abs(rb2d.velocity.x) > 0.05 && !Input.GetButton("Horizontal"))
+        {
+            if (rb2d.velocity.x > 0)
+            {
+                rb2d.velocity += Vector2.left * h_friction_multiplier * Time.deltaTime;
+            }
+            else
+            {
+                rb2d.velocity += Vector2.right * h_friction_multiplier * Time.deltaTime;
+            }
         }
     }
 
