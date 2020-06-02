@@ -9,13 +9,15 @@ public class GameManagerTutorial : MonoBehaviour
     [SerializeField] private Transform playerStartPos;
     [SerializeField] private GameObject[] coffeeBeans;
     [SerializeField] private Animator pAnimator, cmAnimator;
-    private RileyInputManager iManager;
+    //private RileyInputManager iManager;
+    private InputManager uManager;
     private int beanCount = 0;
     public bool paused = false, dead = false;
     // Start is called before the first frame update
     void Start()
     {
-        iManager = gameObject.GetComponent<RileyInputManager>();
+      //  iManager = gameObject.GetComponent<RileyInputManager>();
+        uManager = gameObject.GetComponent<InputManager>();
         player.transform.position = playerStartPos.position;
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
@@ -32,7 +34,8 @@ public class GameManagerTutorial : MonoBehaviour
     {
         pAnimator.SetTrigger("respawn");
         player.transform.position = playerStartPos.position;
-        iManager.UnFreeze();
+       // iManager.UnFreeze();
+        uManager.UnFreeze();
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         dead = false;
@@ -46,7 +49,8 @@ public class GameManagerTutorial : MonoBehaviour
     public void PlayerDie()
     {
         pAnimator.SetTrigger("dead");
-        iManager.Freeze();
+       // iManager.Freeze();
+        uManager.Freeze();
         deathMessage.SetActive(true);
         dead = true;
     }
@@ -72,7 +76,8 @@ public class GameManagerTutorial : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
-        iManager.Freeze();
+       // iManager.Freeze();
+        uManager.Freeze();
         Time.timeScale = 0;
         paused = true;
     }
@@ -80,7 +85,8 @@ public class GameManagerTutorial : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
-        iManager.UnFreeze();
+      //  iManager.UnFreeze();
+        uManager.UnFreeze();
         Time.timeScale = 1;
         paused = false;
     }

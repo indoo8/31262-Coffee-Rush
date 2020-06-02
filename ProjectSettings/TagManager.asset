@@ -8,6 +8,7 @@ TagManager:
   - bean
   - death
   - coffeeMachine
+  - JumpPad
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Wall
   - Spike
   - Bean
-  - 
+  - JumpPlatform
   - 
   - 
   - 
