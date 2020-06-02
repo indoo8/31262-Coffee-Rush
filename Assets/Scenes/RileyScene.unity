@@ -128,6 +128,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1153471964343306684, guid: 7484e8db706b04a4b9d03222575e6acc,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153471964343306684, guid: 7484e8db706b04a4b9d03222575e6acc,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2897382501306751899, guid: 7484e8db706b04a4b9d03222575e6acc,
         type: 3}
       propertyPath: m_Name
@@ -187,6 +197,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528388165645133617, guid: 7484e8db706b04a4b9d03222575e6acc,
+        type: 3}
+      propertyPath: max_speed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528388165645133617, guid: 7484e8db706b04a4b9d03222575e6acc,
+        type: 3}
+      propertyPath: h_friction_multiplier
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7484e8db706b04a4b9d03222575e6acc, type: 3}
