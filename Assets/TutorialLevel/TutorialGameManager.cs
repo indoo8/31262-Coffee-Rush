@@ -10,14 +10,14 @@ public class TutorialGameManager : MonoBehaviour
     [SerializeField] private GameObject[] coffeeBeans;
     [SerializeField] private Animator pAnimator, cmAnimator;
     //private RileyInputManager iManager;
-    private InputManager uManager;
+    private TutorialInputManager uManager;
     private int beanCount = 0;
     public bool paused = false, dead = false;
     // Start is called before the first frame update
     void Start()
     {
       //  iManager = gameObject.GetComponent<RileyInputManager>();
-        uManager = gameObject.GetComponent<InputManager>();
+        uManager = gameObject.GetComponent<TutorialInputManager>();
         player.transform.position = playerStartPos.position;
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
