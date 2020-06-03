@@ -10,7 +10,7 @@ public class MainMenuAnimations : MonoBehaviour
     void Start()
     {
         pAnimator.SetBool("grounded", true);
-        pAnimator.SetFloat("speed", 8f);
+        pAnimator.SetFloat("speed", 4f);
         cmAnimator.SetTrigger("fillCoffeeLoop");
     }
 }
