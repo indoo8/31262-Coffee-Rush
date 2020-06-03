@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class JumpPad : MonoBehaviour
 {
@@ -11,10 +12,12 @@ public class JumpPad : MonoBehaviour
     //public float bigJump;
     //public Rigidbody2D rb;
     public Vector2 velocity;
+    //public BoxCollider2D bounceTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
+        //bounceTrigger = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
        //rb = GetComponent<Rigidbody2D>();
     }
@@ -40,10 +43,13 @@ public class JumpPad : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isBounce = true;
+       // if (bounceTrigger.CompareTag("Player"))
+        //{
+            isBounce = true;
+       // }
         //Debug.Log(isBounce);
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         isBounce = false;
         //Debug.Log(isBounce);
@@ -53,5 +59,12 @@ public class JumpPad : MonoBehaviour
     {
             player.GetComponent<Rigidbody2D>().velocity = velocity;
             Debug.Log("Bouncing");
+        StartCoroutine("PostBounce");
+    }
+
+    IEnumerator PostBounce()
+    {
+        yield return new WaitForSeconds(1);
+        isBounce = false;
     }
 }
