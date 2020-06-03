@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BeansCollision : MonoBehaviour
 {
-    int beanCounter = 0;
-    public TutorialGameManager gManager;
+    //int beanCounter = 0;
+    public JakeGameManager gManager;
 
     // Start is called before the first frame update
     void Start()
