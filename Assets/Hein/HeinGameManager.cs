@@ -16,6 +16,7 @@ public class HeinGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Started");
         iManager = gameObject.GetComponent<HeinInputManager>();
         player.transform.position = playerStartPos.position;
         deathMessage.SetActive(false);
@@ -32,6 +33,7 @@ public class HeinGameManager : MonoBehaviour
 
     public void Respawn()
     {
+        Debug.Log("Respawned");
         pAnimator.SetTrigger("respawn");
         player.transform.position = playerStartPos.position;
         iManager.UnFreeze();
@@ -47,6 +49,7 @@ public class HeinGameManager : MonoBehaviour
 
     public void PlayerDie()
     {
+        Debug.Log("Died");
         pAnimator.SetTrigger("dead");
         iManager.Freeze();
         deathMessage.SetActive(true);
@@ -55,6 +58,7 @@ public class HeinGameManager : MonoBehaviour
 
     public void CollectBean()
     {
+        Debug.Log("Collected Bean");
         beanCount++;
         Debug.Log("beanCount = " + beanCount);
     }
@@ -73,6 +77,7 @@ public class HeinGameManager : MonoBehaviour
 
     public void PauseGame()
     {
+        Debug.Log("Paused");
         pauseMenu.SetActive(true);
         iManager.Freeze();
         Time.timeScale = 0;
@@ -81,6 +86,7 @@ public class HeinGameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        Debug.Log("Resumed");
         pauseMenu.SetActive(false);
         iManager.UnFreeze();
         Time.timeScale = 1;
