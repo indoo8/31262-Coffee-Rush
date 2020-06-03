@@ -10,7 +10,7 @@ public class JumpPad : MonoBehaviour
     GameObject player;
     public Animator anim;
     //public float bigJump;
-    //public Rigidbody2D rb;
+   // public Rigidbody2D rb;
     public Vector2 velocity;
     //public BoxCollider2D bounceTrigger;
 
@@ -19,7 +19,7 @@ public class JumpPad : MonoBehaviour
     {
         //bounceTrigger = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
-       //rb = GetComponent<Rigidbody2D>();
+       //rb = player.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -28,30 +28,40 @@ public class JumpPad : MonoBehaviour
         
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (isBounce)
-        {
-            anim.SetBool("Spring", true);
-            player = collision.gameObject;
-        }
-        else
-        {
-            anim.SetBool("Spring", false);
-        }
-    }
+    // private void OnCollisionStay2D(Collision2D collision)
+    //{
+      //  if (isBounce)
+     //   {
+     //       anim.SetBool("Spring", true);
+     //       player = collision.gameObject;
+    //    }
+    //    else
+    //    {
+    //        anim.SetBool("Spring", false);
+    //    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       // if (bounceTrigger.CompareTag("Player"))
-        //{
+        if (collision.gameObject.CompareTag("Player"))
+        {
             isBounce = true;
-       // }
-        //Debug.Log(isBounce);
+        }
+        player = collision.gameObject;
+        if (isBounce)
+        {
+            anim.SetBool("Spring", true);
+            willBounce();
+        }
+       
     }
     void OnTriggerExit2D(Collider2D collision)
     {
         isBounce = false;
+        if(isBounce == false)
+        {
+            anim.SetBool("Spring", false);
+        }
         //Debug.Log(isBounce);
     }
 
@@ -59,12 +69,12 @@ public class JumpPad : MonoBehaviour
     {
             player.GetComponent<Rigidbody2D>().velocity = velocity;
             Debug.Log("Bouncing");
-        StartCoroutine("PostBounce");
+        //StartCoroutine("PostBounce");
     }
 
-    IEnumerator PostBounce()
-    {
-        yield return new WaitForSeconds(1);
-        isBounce = false;
-    }
+   // IEnumerator PostBounce()
+   // {
+     //   yield return new WaitForSeconds(1);
+    //    isBounce = false;
+   // }
 }
