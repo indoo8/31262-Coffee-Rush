@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RileyPlayerCollisions : MonoBehaviour
 {
-    public RileyGameManager gManager;
+    [SerializeField] private RileyGameManager gManager;
 
     private void Start()
     {
