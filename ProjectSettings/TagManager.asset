@@ -10,6 +10,7 @@ TagManager:
   - coffeeMachine
   - JumpPad
   - teleporter
+  - endLevel
   layers:
   - Default
   - TransparentFX
