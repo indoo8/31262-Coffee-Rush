@@ -4651,11 +4651,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5444760145549896996, guid: 643869a817847f243b69076843f6a319,
         type: 3}
-      propertyPath: canBeEntered
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5444760145549896996, guid: 643869a817847f243b69076843f6a319,
-        type: 3}
       propertyPath: linkedTeleporter
       value: 
       objectReference: {fileID: 1388604095}
@@ -4729,21 +4724,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5444760145549897178, guid: 643869a817847f243b69076843f6a319,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.6367924
-      objectReference: {fileID: 0}
-    - target: {fileID: 5444760145549897178, guid: 643869a817847f243b69076843f6a319,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.7350722
-      objectReference: {fileID: 0}
-    - target: {fileID: 5444760145549897178, guid: 643869a817847f243b69076843f6a319,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 643869a817847f243b69076843f6a319, type: 3}
 --- !u!1001 &6305271249726967882
@@ -4761,12 +4741,12 @@ PrefabInstance:
     - target: {fileID: 6305271248008326153, guid: d78da827d496001439232ff712489fa5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.162313
+      value: 1.8737524
       objectReference: {fileID: 0}
     - target: {fileID: 6305271248008326153, guid: d78da827d496001439232ff712489fa5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00800167
+      value: -0.012902641
       objectReference: {fileID: 0}
     - target: {fileID: 6305271248906076366, guid: d78da827d496001439232ff712489fa5,
         type: 3}
