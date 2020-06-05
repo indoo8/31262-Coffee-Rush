@@ -27,5 +27,10 @@ public class RileyPlayerCollisions : MonoBehaviour
             //Debug.Log("waterTrigger");
             gManager.ToggleWater();
         }
+        if (collision.gameObject.tag == "checkpoint")
+        {
+            gManager.NextCheckpoint();
+            collision.gameObject.SetActive(false);
+        }
     }
 }

@@ -4936,6 +4936,16 @@ PrefabInstance:
       propertyPath: checkpoints.Array.data[3]
       value: 
       objectReference: {fileID: 1132421994}
+    - target: {fileID: 917610671521635325, guid: 75594302c2af776488d880a02bd613af,
+        type: 3}
+      propertyPath: checkpoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 986839818}
+    - target: {fileID: 917610671521635325, guid: 75594302c2af776488d880a02bd613af,
+        type: 3}
+      propertyPath: checkpoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1394864283}
     - target: {fileID: 917610671521635327, guid: 75594302c2af776488d880a02bd613af,
         type: 3}
       propertyPath: m_Name

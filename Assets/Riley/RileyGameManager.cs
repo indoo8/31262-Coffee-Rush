@@ -8,19 +8,19 @@ public class RileyGameManager : MonoBehaviour
 {
     [SerializeField] private GameObject player, deathMessage, pauseMenu, endMenuScreen;
     [SerializeField] private Text endMenuScore, endMenuTotal;
-    [SerializeField] private Transform playerStartPos, playerRespawnPos;
+    [SerializeField] private Transform[] checkpoints;
     [SerializeField] private int totalBeans;
     [SerializeField] private RisingWater risingWater;
     [SerializeField] private Animator pAnimator, cmAnimator;
     private RileyInputManager iManager;
-    private int beanCount = 0;
+    private int beanCount = 0, checkpoint = 1;
     public bool paused = false, dead = false;
     // Start is called before the first frame update
     void Start()
     {
         iManager = gameObject.GetComponent<RileyInputManager>();
-        player.transform.position = playerStartPos.position;
-        risingWater.ResetWater();
+        player.transform.position = checkpoints[0].position;
+        risingWater.ResetWater(checkpoint);
         //risingWater.RaiseWater();
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
@@ -37,13 +37,21 @@ public class RileyGameManager : MonoBehaviour
     public void Respawn()
     {
         pAnimator.SetTrigger("respawn");
-        player.transform.position = playerRespawnPos.position;
+        player.transform.position = checkpoints[checkpoint].position;
         iManager.UnFreeze();
-        risingWater.ResetWater();
+        risingWater.ResetWater(checkpoint);
+        if (checkpoint > 1)
+            risingWater.RaiseWater();
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         dead = false;
         Time.timeScale = 1;
+    }
+
+    public void NextCheckpoint()
+    {
+        checkpoint++;
+        Debug.Log(checkpoint);
     }
 
     public void PlayerDie()

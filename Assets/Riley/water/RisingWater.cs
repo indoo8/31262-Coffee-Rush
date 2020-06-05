@@ -5,29 +5,30 @@ using UnityEngine;
 public class RisingWater : MonoBehaviour
 {
     [SerializeField] private  float speed = 1;
-    [SerializeField] private Transform startPos, water;
+    [SerializeField] private Transform water;
+    [SerializeField] private Transform[] checkpoints;
     private bool rising;
     // Start is called before the first frame update
     void Start()
     {
-        startPos.transform.position = water.transform.position;
+        checkpoints[0].position = water.position;
         rising = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("waterUpdate");
+        //Debug.Log("waterUpdate");
         if (rising)
         {
-            Debug.Log("moveUp");
+           // Debug.Log("moveUp");
             water.Translate(Vector3.up * speed * Time.deltaTime);
         }
     }
 
     public void RaiseWater()
     {
-        Debug.Log("rising = true");
+        //Debug.Log("rising = true");
         rising = true;
     }
 
@@ -36,10 +37,10 @@ public class RisingWater : MonoBehaviour
         rising = false;
     }
 
-    public void ResetWater()
+    public void ResetWater(int index)
     {
         rising = false;
-        water.position = startPos.position;
+        water.position = checkpoints[index-1].position;
     }
 
     public void ToggleWater()
