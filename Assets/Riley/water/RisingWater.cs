@@ -41,4 +41,9 @@ public class RisingWater : MonoBehaviour
         rising = false;
         water.position = startPos.position;
     }
+
+    public void ToggleWater()
+    {
+        rising = !rising;
+    }
 }

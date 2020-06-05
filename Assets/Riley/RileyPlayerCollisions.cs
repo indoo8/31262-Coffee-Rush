@@ -14,7 +14,7 @@ public class RileyPlayerCollisions : MonoBehaviour
     {
         if (collision.gameObject.tag == "death")
         {
-            Debug.Log("collided with " + collision.gameObject.name);
+           // Debug.Log("collided with " + collision.gameObject.name);
             gManager.PlayerDie();
         }
         if (collision.gameObject.tag == "bean")
@@ -24,8 +24,8 @@ public class RileyPlayerCollisions : MonoBehaviour
         }
         if (collision.gameObject.tag == "waterTrigger")
         {
-            Debug.Log("waterTRigger");
-            gManager.StartRaiseWater();
+            //Debug.Log("waterTrigger");
+            gManager.ToggleWater();
         }
     }
 }

@@ -27,5 +27,10 @@ public class TutorialPlayerCollisions : MonoBehaviour
             Debug.Log("endLevelTrigger");
             gManager.EndLevel();
         }
+        if (collision.gameObject.tag == "checkpoint")
+        {
+            gManager.NextCheckpoint();
+            collision.gameObject.SetActive(false);
+        }
     }
 }

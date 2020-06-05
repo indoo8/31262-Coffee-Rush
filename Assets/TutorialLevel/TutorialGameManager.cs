@@ -8,8 +8,8 @@ public class TutorialGameManager : MonoBehaviour
 {
     [SerializeField] private GameObject player, deathMessage, pauseMenu, endMenuScreen;
     [SerializeField] private Text endMenuScore, endMenuTotal;
-    [SerializeField] private Transform playerStartPos;
-    [SerializeField] private int totalBeans;
+    [SerializeField] private Transform[] checkpoints;
+    [SerializeField] private int totalBeans, checkpoint;
     [SerializeField] private Animator pAnimator, cmAnimator;
     [SerializeField] private TutorialEndCutsceneManager endCutscene;
     private TutorialInputManager iManager;
@@ -19,11 +19,12 @@ public class TutorialGameManager : MonoBehaviour
     void Start()
     {
         iManager = gameObject.GetComponent<TutorialInputManager>();
-        player.transform.position = playerStartPos.position;
+        player.transform.position = checkpoints[0].position;
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
         endMenuTotal.text = "out of " + totalBeans + " Coffee Beans.";
+        checkpoint = 0;
     }
 
     // Update is called once per frame
@@ -34,13 +35,18 @@ public class TutorialGameManager : MonoBehaviour
 
     public void Respawn()
     {
+        player.transform.position = checkpoints[checkpoint].position;
         pAnimator.SetTrigger("respawn");
-        player.transform.position = playerStartPos.position;
         iManager.UnFreeze();
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         dead = false;
         Time.timeScale = 1;
+    }
+
+    public void NextCheckpoint()
+    {
+        checkpoint++;
     }
 
     public void PlayerDie()

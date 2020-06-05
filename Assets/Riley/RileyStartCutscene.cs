@@ -33,5 +33,8 @@ public class RileyStartCutscene : MonoBehaviour
     IEnumerator StartCutscene()
     {
         yield return new WaitForSeconds(5f);
+        cTrapdoor.SetActive(false);
+        yield return new WaitForSeconds(5f);
+        cTopFloor.SetActive(false);
     }
 }

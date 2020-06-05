@@ -58,13 +58,13 @@ public class RileyGameManager : MonoBehaviour
     public void CollectBean()
     {
         beanCount++;
-        Debug.Log("beanCount = " + beanCount);
+       // Debug.Log("beanCount = " + beanCount);
     }
 
-    public void StartRaiseWater()
+    public void ToggleWater()
     {
-        Debug.Log("startRaiseWater");
-        risingWater.RaiseWater();
+        //Debug.Log("startRaiseWater");
+        risingWater.ToggleWater();
     }
 
     public void EndLevel()

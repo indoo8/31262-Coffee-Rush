@@ -12,7 +12,7 @@ public class StartCutsneneManager : MonoBehaviour
     private Animator cPlayerAnimator, cBanditAnimator;
     [SerializeField] private float walkSpeed, stealSpeed, runSpeed;
     private bool playerWalk = false, banditWalk = false, banditSteal = false, banditRun = false;
-    [SerializeField] Transform pStartWalkPos, pEndWalkPos, bStartWalkPos, bEndWalkPos, bStealPos;
+    [SerializeField] private Transform pStartWalkPos, pEndWalkPos, bStartWalkPos, bEndWalkPos, bStealPos;
 
     // Start is called before the first frame update
     void Start()

@@ -12,6 +12,7 @@ TagManager:
   - teleporter
   - endLevel
   - waterTrigger
+  - checkpoint
   layers:
   - Default
   - TransparentFX
