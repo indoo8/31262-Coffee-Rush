@@ -22,5 +22,10 @@ public class TutorialPlayerCollisions : MonoBehaviour
             gManager.CollectBean();
             collision.gameObject.SetActive(false);
         }
+        if (collision.gameObject.tag == "endLevel")
+        {
+            Debug.Log("endLevelTrigger");
+            gManager.EndLevel();
+        }
     }
 }

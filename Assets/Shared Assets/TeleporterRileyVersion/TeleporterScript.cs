@@ -12,13 +12,13 @@ public class TeleporterScript : MonoBehaviour
     private Animator tAnimator;
     // Start is called before the first frame update
     void Start()
-    {
+    {/*
         tAnimator = gameObject.GetComponent<Animator>();
         tAnimator.SetBool("canEnter", canBeEntered);
         if (canBeEntered)
         {
             tpPos = linkedTeleporter.transform;
-        }
+        }*/
     }
 
     public void EnterTeleporter()

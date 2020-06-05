@@ -73,9 +73,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5506208604813469129, guid: 336404acaad26e840bacdc947ae15a10,
+  m_Sprite: {fileID: -4169901787838424889, guid: 746d24e294b160d4cbdf4870fdd3359c,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6367924, g: 0.7350722, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   linkedTeleporter: {fileID: 0}
   tpPos: {fileID: 0}
   pMove: {fileID: 0}
-  canBeEntered: 0
+  canBeEntered: 1
 --- !u!61 &2128486781740328452
 BoxCollider2D:
   m_ObjectHideFlags: 0
