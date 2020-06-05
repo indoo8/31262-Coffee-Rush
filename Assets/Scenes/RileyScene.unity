@@ -1102,6 +1102,7 @@ Transform:
   - {fileID: 330201398}
   - {fileID: 1350491184}
   - {fileID: 1829643216}
+  - {fileID: 1239888257}
   m_Father: {fileID: 1537082408}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3115,7 +3116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1775375306}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &546325311 stripped
 Transform:
@@ -3332,7 +3333,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1775375306}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &614132254
 BoxCollider2D:
@@ -3481,6 +3482,63 @@ MonoBehaviour:
   portalOut: {fileID: 466878115}
   flipXSpeed: 0
   flipYSpeed: 1
+--- !u!1 &718240996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 718240997}
+  - component: {fileID: 718240998}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: checkpoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &718240997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718240996}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.33, y: 75.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1775375306}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &718240998
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718240996}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.87882423, y: 1.196701}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4861565, y: 3.393402}
+  m_EdgeRadius: 0
 --- !u!1 &719058030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3540,7 +3598,7 @@ PrefabInstance:
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.8
+      value: 12.79
       objectReference: {fileID: 0}
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
@@ -4218,6 +4276,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 719058031}
     m_Modifications:
+    - target: {fileID: 2128486781740328452, guid: 643869a817847f243b69076843f6a319,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.021868084
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128486781740328452, guid: 643869a817847f243b69076843f6a319,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.26210338
+      objectReference: {fileID: 0}
     - target: {fileID: 5444760145549896997, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_Name
@@ -5287,6 +5355,81 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1676013665}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1239888256
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 205224469}
+    m_Modifications:
+    - target: {fileID: 670884601700635006, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_Name
+      value: arrowSprite (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 80.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 263.0117
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e064de473a15264d99cc465956bbe41, type: 3}
+--- !u!4 &1239888257 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2333677459569641420, guid: 8e064de473a15264d99cc465956bbe41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1239888256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1244853147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5390,7 +5533,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1775375306}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1245216502
 BoxCollider2D:
@@ -7363,7 +7506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1872890366}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: checkpoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9752,6 +9895,11 @@ PrefabInstance:
       propertyPath: checkpoints.Array.data[3]
       value: 
       objectReference: {fileID: 614132253}
+    - target: {fileID: 436129325666634434, guid: 831d4bdd81386c84eaf5df47c8894b98,
+        type: 3}
+      propertyPath: startCutscene
+      value: 
+      objectReference: {fileID: 270189442}
     - target: {fileID: 3240368833406423731, guid: 831d4bdd81386c84eaf5df47c8894b98,
         type: 3}
       propertyPath: pMove
@@ -9939,7 +10087,7 @@ PrefabInstance:
     - target: {fileID: 6452694361521859768, guid: 098378b9d1463fc42af31bcdb8c93aa6,
         type: 3}
       propertyPath: checkpoints.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6452694361521859768, guid: 098378b9d1463fc42af31bcdb8c93aa6,
         type: 3}
@@ -9975,10 +10123,15 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1466492489}
+      objectReference: {fileID: 1407610180}
     - target: {fileID: 6452694361521859768, guid: 098378b9d1463fc42af31bcdb8c93aa6,
         type: 3}
       propertyPath: checkpoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1466492489}
+    - target: {fileID: 6452694361521859768, guid: 098378b9d1463fc42af31bcdb8c93aa6,
+        type: 3}
+      propertyPath: checkpoints.Array.data[3]
       value: 
       objectReference: {fileID: 661911369}
     - target: {fileID: 8406722915681667038, guid: 098378b9d1463fc42af31bcdb8c93aa6,

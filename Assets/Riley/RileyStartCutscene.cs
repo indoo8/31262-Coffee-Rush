@@ -20,8 +20,7 @@ public class RileyStartCutscene : MonoBehaviour
         Vector3 banditpos = cBandit.transform.position;
         banditpos.x = bStartPos.position.x;
         cBanditTransform.position = banditpos;
-
-        StartCoroutine(StartCutscene());
+        
     }
 
     // Update is called once per frame
@@ -30,10 +29,17 @@ public class RileyStartCutscene : MonoBehaviour
         
     }
 
+    public void Begin()
+    {
+        StartCoroutine(StartCutscene());
+    }
+
     IEnumerator StartCutscene()
     {
-        yield return new WaitForSeconds(5f);
+        iManager.Freeze();
+        yield return new WaitForSeconds(2f);
         cTrapdoor.SetActive(false);
+        iManager.UnFreeze();
         yield return new WaitForSeconds(5f);
         cTopFloor.SetActive(false);
     }

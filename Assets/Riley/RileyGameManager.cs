@@ -12,8 +12,9 @@ public class RileyGameManager : MonoBehaviour
     [SerializeField] private int totalBeans;
     [SerializeField] private RisingWater risingWater;
     [SerializeField] private Animator pAnimator, cmAnimator;
+    [SerializeField] private RileyStartCutscene startCutscene;
     private RileyInputManager iManager;
-    private int beanCount = 0, checkpoint = 1;
+    private int beanCount = 0, checkpoint = 0;
     public bool paused = false, dead = false;
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,10 @@ public class RileyGameManager : MonoBehaviour
 
     public void NextCheckpoint()
     {
+        if (checkpoint == 0)
+        {
+            BeginCutscene();
+        }
         checkpoint++;
         Debug.Log(checkpoint);
     }
@@ -73,6 +78,11 @@ public class RileyGameManager : MonoBehaviour
     {
         //Debug.Log("startRaiseWater");
         risingWater.ToggleWater();
+    }
+
+    public void BeginCutscene()
+    {
+        startCutscene.Begin();
     }
 
     public void EndLevel()

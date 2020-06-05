@@ -40,7 +40,7 @@ public class RisingWater : MonoBehaviour
     public void ResetWater(int index)
     {
         rising = false;
-        water.position = checkpoints[index-1].position;
+        water.position = checkpoints[index].position;
     }
 
     public void ToggleWater()
