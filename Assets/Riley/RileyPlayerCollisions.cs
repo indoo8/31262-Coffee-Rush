@@ -22,5 +22,10 @@ public class RileyPlayerCollisions : MonoBehaviour
             gManager.CollectBean();
             collision.gameObject.SetActive(false);
         }
+        if (collision.gameObject.tag == "waterTrigger")
+        {
+            Debug.Log("waterTRigger");
+            gManager.StartRaiseWater();
+        }
     }
 }

@@ -12,17 +12,17 @@ public class LevelSelector : MonoBehaviour
 
     public void RileyLevel()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
     }
 
     public void HeinLevel()
     {
-       // SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void JakeLevel()
     {
-       // SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2);
     }
 
     public void GavinLevel()
