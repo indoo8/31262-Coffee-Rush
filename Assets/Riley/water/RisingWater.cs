@@ -10,6 +10,7 @@ public class RisingWater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPos.transform.position = water.transform.position;
         rising = false;
     }
 
