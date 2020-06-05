@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RileyGameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject player, deathMessage, pauseMenu;
-    [SerializeField] private Transform playerStartPos;
-    [SerializeField] private GameObject[] coffeeBeans;
+    [SerializeField] private GameObject player, deathMessage, pauseMenu, endMenuScreen;
+    [SerializeField] private Text endMenuScore, endMenuTotal;
+    [SerializeField] private Transform playerStartPos, playerRespawnPos;
+    [SerializeField] private int totalBeans;
     [SerializeField] private RisingWater risingWater;
     [SerializeField] private Animator pAnimator, cmAnimator;
     private RileyInputManager iManager;
@@ -19,10 +21,11 @@ public class RileyGameManager : MonoBehaviour
         iManager = gameObject.GetComponent<RileyInputManager>();
         player.transform.position = playerStartPos.position;
         risingWater.ResetWater();
+        //risingWater.RaiseWater();
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
-        
+        endMenuTotal.text = "out of " + totalBeans + " Coffee Beans.";
     }
 
     // Update is called once per frame
@@ -34,17 +37,13 @@ public class RileyGameManager : MonoBehaviour
     public void Respawn()
     {
         pAnimator.SetTrigger("respawn");
-        player.transform.position = playerStartPos.position;
+        player.transform.position = playerRespawnPos.position;
         iManager.UnFreeze();
         risingWater.ResetWater();
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         dead = false;
         Time.timeScale = 1;
-        for (int i=0; i<coffeeBeans.Length; i++)
-        {
-            coffeeBeans[i].SetActive(true);
-        }
     }
 
     public void PlayerDie()
@@ -62,16 +61,20 @@ public class RileyGameManager : MonoBehaviour
         Debug.Log("beanCount = " + beanCount);
     }
 
-    public void ReachCoffeeMachine()
+    public void StartRaiseWater()
     {
-        if (beanCount == 3)
-        {
+        Debug.Log("startRaiseWater");
+        risingWater.RaiseWater();
+    }
 
-        }
-        else
-        {
+    public void EndLevel()
+    {
 
-        }
+    }
+
+    public void EndLevelScreen()
+    {
+
     }
 
     public void PauseGame()
@@ -103,5 +106,12 @@ public class RileyGameManager : MonoBehaviour
         //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
 
+    }
+
+    public void NextLevel()
+    {
+        Time.timeScale = 1;
+        endMenuScreen.SetActive(false);
+        SceneManager.LoadScene(0);
     }
 }

@@ -9,18 +9,15 @@ public class TutorialGameManager : MonoBehaviour
     [SerializeField] private GameObject player, deathMessage, pauseMenu, endMenuScreen;
     [SerializeField] private Text endMenuScore, endMenuTotal;
     [SerializeField] private Transform playerStartPos;
-    //[SerializeField] private GameObject[] coffeeBeans;
     [SerializeField] private int totalBeans;
     [SerializeField] private Animator pAnimator, cmAnimator;
     [SerializeField] private TutorialEndCutsceneManager endCutscene;
-    //private RileyInputManager iManager;
     private TutorialInputManager iManager;
     private int beanCount = 0;
     public bool paused = false, dead = false;
     // Start is called before the first frame update
     void Start()
     {
-      //  iManager = gameObject.GetComponent<RileyInputManager>();
         iManager = gameObject.GetComponent<TutorialInputManager>();
         player.transform.position = playerStartPos.position;
         deathMessage.SetActive(false);
@@ -39,23 +36,16 @@ public class TutorialGameManager : MonoBehaviour
     {
         pAnimator.SetTrigger("respawn");
         player.transform.position = playerStartPos.position;
-       // iManager.UnFreeze();
         iManager.UnFreeze();
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         dead = false;
-
-        /*
-        for (int i = 0; i < coffeeBeans.Length; i++)
-        {
-            coffeeBeans[i].SetActive(true);
-        }*/
+        Time.timeScale = 1;
     }
 
     public void PlayerDie()
     {
         pAnimator.SetTrigger("dead");
-       // iManager.Freeze();
         iManager.Freeze();
         deathMessage.SetActive(true);
         dead = true;
@@ -81,7 +71,6 @@ public class TutorialGameManager : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
-       // iManager.Freeze();
         iManager.Freeze();
         Time.timeScale = 0;
         paused = true;
@@ -90,7 +79,6 @@ public class TutorialGameManager : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
-      //  iManager.UnFreeze();
         iManager.UnFreeze();
         Time.timeScale = 1;
         paused = false;

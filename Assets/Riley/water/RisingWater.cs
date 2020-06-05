@@ -6,23 +6,27 @@ public class RisingWater : MonoBehaviour
 {
     [SerializeField] private  float speed = 1;
     [SerializeField] private Transform startPos, water;
-    private bool rising = false;
+    private bool rising;
     // Start is called before the first frame update
     void Start()
     {
+        rising = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("waterUpdate");
         if (rising)
         {
+            Debug.Log("moveUp");
             water.Translate(Vector3.up * speed * Time.deltaTime);
         }
     }
 
     public void RaiseWater()
     {
+        Debug.Log("rising = true");
         rising = true;
     }
 
@@ -33,7 +37,7 @@ public class RisingWater : MonoBehaviour
 
     public void ResetWater()
     {
-        rising = true;
+        rising = false;
         water.position = startPos.position;
     }
 }
