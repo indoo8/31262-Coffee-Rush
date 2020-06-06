@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RileyStartCutscene : MonoBehaviour
 {
-    [SerializeField] private GameObject cBandit, cTrapdoor, cTopFloor;
+    [SerializeField] private GameObject cBandit, cTrapdoor, cTopFloor, cTrapText, cFoundHimText;
     [SerializeField] private RileyGameManager gManager;
     [SerializeField] private RileyInputManager iManager;
     private Animator cBanditAnimator;
@@ -20,13 +20,26 @@ public class RileyStartCutscene : MonoBehaviour
         Vector3 banditpos = cBandit.transform.position;
         banditpos.x = bStartPos.position.x;
         cBanditTransform.position = banditpos;
+        banditRun = true;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (banditRun)
+        {
+            cBanditTransform.Translate(Vector3.right * banditSpeed * Time.deltaTime);
+            cBanditAnimator.SetFloat("speed", banditSpeed);
+            if (cBanditTransform.position.x > bEndPos.position.x)
+            {
+                banditRun = false;
+                cBanditAnimator.SetFloat("speed", 0);
+                Vector3 scale = cBanditTransform.localScale;
+                scale.x *= -1;
+                cBanditTransform.localScale = scale;
+            }
+        }
     }
 
     public void Begin()
@@ -37,10 +50,13 @@ public class RileyStartCutscene : MonoBehaviour
     IEnumerator StartCutscene()
     {
         iManager.Freeze();
-        yield return new WaitForSeconds(2f);
+        cTrapText.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        cFoundHimText.SetActive(false);
         cTrapdoor.SetActive(false);
         iManager.UnFreeze();
         yield return new WaitForSeconds(5f);
+        cTrapText.SetActive(false);
         cTopFloor.SetActive(false);
     }
 }
