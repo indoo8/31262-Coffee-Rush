@@ -50,11 +50,9 @@ public class RileyStartCutscene : MonoBehaviour
     IEnumerator StartCutscene()
     {
         iManager.Freeze();
-        cFoundHimText.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        cFoundHimText.SetActive(false);
         cTrapText.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
+        cFoundHimText.SetActive(false);
         cTrapdoor.SetActive(false);
         iManager.UnFreeze();
         yield return new WaitForSeconds(5f);

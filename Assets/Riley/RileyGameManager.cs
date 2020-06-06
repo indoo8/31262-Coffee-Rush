@@ -11,7 +11,7 @@ public class RileyGameManager : MonoBehaviour
     [SerializeField] private Transform[] checkpoints;
     [SerializeField] private int totalBeans;
     [SerializeField] private RisingWater risingWater;
-    [SerializeField] private Animator pAnimator, cmAnimator;
+    [SerializeField] private Animator pAnimator;
     [SerializeField] private RileyStartCutscene startCutscene;
     private RileyInputManager iManager;
     private int beanCount = 0, checkpoint = 0;
