@@ -39,6 +39,7 @@ public class JakeGameManager : MonoBehaviour
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         dead = false;
+        Time.timeScale = 1;
 
         for (int i = 0; i < coffeeBeans.Length; i++)
         {
