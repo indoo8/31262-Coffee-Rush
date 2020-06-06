@@ -638,10 +638,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: ddc76e82-1fc4-4b08-a4d4-7bb66070cebe
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: 31262-Coffee-Rush
+  organizationId: 1d5116b-bf17-4206-a055-bca5f904d2bd
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
