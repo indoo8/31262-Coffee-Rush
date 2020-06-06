@@ -15,18 +15,18 @@ public class Bullet : MonoBehaviour {
         rb.velocity = transform.right * speed;
     }
     
-    void OnTriggerEnter2D (Object1 hitInfo)
-    {
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-        }
+   // void OnTriggerEnter2D (Object1 hitInfo)
+  //  {
+ //       Enemy enemy = hitInfo.GetComponent<Enemy>();
+  //      if (enemy != null)
+  //      {
+  //          enemy.TakeDamage(damage);
+  //      }
 
-        Instantiate(impactEffect, transform.position, transform.rotation);
+   //     Instantiate(impactEffect, transform.position, transform.rotation);
 
-        Destroy(gameObject);
-    }
+  //      Destroy(gameObject);
+  //  }
 
 
 }

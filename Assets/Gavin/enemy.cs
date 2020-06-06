@@ -9,19 +9,19 @@ public class enemy : MonoBehaviour
 
     public GameObject deathEffect;
 
-    public void TakeDamage (int damage)
-    {
-        health -= damage;
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
+ //   public void TakeDamage (int damage)
+ //   {
+ //       health -= damage;
+ //       if (health <= 0)
+ ///       {
+ //           Die();
+ //       }
+ //   }
 
-    void Die ()
-    {
-        Instantate(deathEffect, transform.position, Quaternion.identify);
-        Destroy(gameObject);
-    }
+   // void Die ()
+   // {
+  //      Instantate(deathEffect, transform.position, Quaternion.identify);
+  //      Destroy(gameObject);
+  //  }
 
 }
