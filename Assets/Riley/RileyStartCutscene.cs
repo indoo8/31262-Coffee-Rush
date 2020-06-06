@@ -20,13 +20,26 @@ public class RileyStartCutscene : MonoBehaviour
         Vector3 banditpos = cBandit.transform.position;
         banditpos.x = bStartPos.position.x;
         cBanditTransform.position = banditpos;
+        banditRun = true;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (banditRun)
+        {
+            cBanditTransform.Translate(Vector3.right * banditSpeed * Time.deltaTime);
+            cBanditAnimator.SetFloat("speed", banditSpeed);
+            if (cBanditTransform.position.x > bEndPos.position.x)
+            {
+                banditRun = false;
+                cBanditAnimator.SetFloat("speed", 0);
+                Vector3 scale = cBanditTransform.localScale;
+                scale.x *= -1;
+                cBanditTransform.localScale = scale;
+            }
+        }
     }
 
     public void Begin()
