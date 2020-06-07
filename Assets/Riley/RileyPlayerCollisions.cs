@@ -32,5 +32,9 @@ public class RileyPlayerCollisions : MonoBehaviour
             gManager.NextCheckpoint();
             collision.gameObject.SetActive(false);
         }
+        if (collision.gameObject.tag == "endLevel")
+        {
+            gManager.EndCutscene();
+        }
     }
 }

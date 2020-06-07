@@ -60,5 +60,6 @@ public class RileyStartCutscene : MonoBehaviour
         cTrapText.SetActive(false);
         cTopFloor.SetActive(false);
         cTrapdoor.SetActive(true);
+        cBandit.SetActive(false);
     }
 }

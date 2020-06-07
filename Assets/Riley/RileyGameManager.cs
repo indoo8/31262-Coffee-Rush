@@ -13,6 +13,7 @@ public class RileyGameManager : MonoBehaviour
     [SerializeField] private RisingWater risingWater;
     [SerializeField] private Animator pAnimator;
     [SerializeField] private RileyStartCutscene startCutscene;
+    [SerializeField] private RileyEndCutscene endCutscene;
     private RileyInputManager iManager;
     private int beanCount = 0, checkpoint = 0;
     public bool paused = false, dead = false;
@@ -85,14 +86,15 @@ public class RileyGameManager : MonoBehaviour
         startCutscene.Begin();
     }
 
-    public void EndLevel()
+    public void EndCutscene()
     {
-
+        endCutscene.Begin();
     }
 
     public void EndLevelScreen()
     {
-
+        endMenuScore.text = "You collected " + beanCount;
+        endMenuScreen.SetActive(true);
     }
 
     public void PauseGame()
