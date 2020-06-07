@@ -16,6 +16,8 @@ TagManager:
   - bandit
   - Bullet
   - superJump
+  - newArea
+  - wallBreak
   layers:
   - Default
   - TransparentFX

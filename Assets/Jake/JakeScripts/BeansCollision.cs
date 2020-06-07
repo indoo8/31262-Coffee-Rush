@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BeansCollision : MonoBehaviour
 {
-   // public GameObject jumpPad, wall1, wall2, wall3;
+    public GameObject jumpPad, wall, jump2;
 
     //int beanCounter = 0;
     public JakeGameManager gManager;
@@ -12,10 +12,9 @@ public class BeansCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       /* jumpPad.SetActive(false);
-        wall1.SetActive(false);
-        wall2.SetActive(false);
-        wall3.SetActive(false);*/
+        jumpPad.SetActive(false);
+        jump2.SetActive(false);
+        wall.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,6 +47,18 @@ public class BeansCollision : MonoBehaviour
             gManager.nextCheckpoint();
             collision.gameObject.SetActive(false);
         }
+
+        if(collision.gameObject.tag == "superJump")
+        {
+            jumpPad.SetActive(true);
+        }
+
+        if(collision.gameObject.tag == "newArea")
+        {
+            wall.SetActive(true);
+            jump2.SetActive(true);
+        }
+
     }
 
 }
