@@ -52,6 +52,7 @@ public class RileyEndCutscene : MonoBehaviour
         RemovePlayerComponents();
         iManager.Freeze();
         playerWalk1 = true;
+        cPAnimator.SetBool("grounded", true);
         yield return new WaitForSeconds(4f);
         StealBean();
         noEscapeText.SetActive(false);
