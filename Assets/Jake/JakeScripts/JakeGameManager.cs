@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class JakeGameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject player, deathMessage, pauseMenu;
+    [SerializeField] private GameObject player, deathMessage, pauseMenu, endMenuScreen;
    // [SerializeField] private Transform playerStartPos;
     [SerializeField] private Transform[] checkpoints;
+    [SerializeField] private Text endMenuScore, endMenuTotal;
     [SerializeField] private Animator pAnimator, cmAnimator;
     [SerializeField] private int totalBeans, checkpoint;
+    [SerializeField] JakeEndCutScene endcutscene;
     private JakeInputManager uManager;
     private int beanCount = 0;
     public bool paused = false, dead = false;
@@ -22,6 +25,7 @@ public class JakeGameManager : MonoBehaviour
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        endMenuTotal.text = "out of " + totalBeans + " Coffee Beans.";
         checkpoint = 0;
     }
 
@@ -42,6 +46,18 @@ public class JakeGameManager : MonoBehaviour
         dead = false;
         Time.timeScale = 1;
         
+    }
+
+    public void EndLevel()
+    {
+        uManager.Freeze();
+        endcutscene.EndScene();
+    }
+
+    public void EndLevelScreen()
+    {
+        endMenuScore.text = "You collected " + beanCount;
+        endMenuScreen.SetActive(true);
     }
 
     public void PlayerDie()
@@ -105,5 +121,12 @@ public class JakeGameManager : MonoBehaviour
         //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
 
+    }
+
+    public void NextLevel()
+    {
+        Time.timeScale = 1;
+        endMenuScreen.SetActive(false);
+        SceneManager.LoadScene(3);
     }
 }

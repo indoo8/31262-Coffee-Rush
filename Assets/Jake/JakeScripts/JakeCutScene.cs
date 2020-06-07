@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class JakeCutScene : MonoBehaviour
 {
-    [SerializeField] GameObject player, fakeplayer, BeanBandit, jumpPad, jumpPad2, fakejumpPad, fakejumpPad2, fakejumpPad3;
+    [SerializeField] GameObject player, fakeplayer, BeanBandit, jumpPad, jumpPad2, fakejumpPad, fakejumpPad2, fakejumpPad3, otherBeanBandit;
     [SerializeField] private JakeInputManager jManager;
     [SerializeField] private JakeGameManager jgManager;
-    private Transform cPlayerTransform, BeanBanditTransform;
-    private Animator banditAnimator, jumpPadAnim;
+    private Transform BeanBanditTransform;
+    private Animator banditAnimator;
     [SerializeField] private float runSpeed;
     private bool banditEscape = false, escapeDone = false;
     [SerializeField] private Transform bStartPos;
@@ -16,6 +16,7 @@ public class JakeCutScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        otherBeanBandit.SetActive(false);
         fakeplayer.SetActive(true);
         jManager.Freeze();
         jumpPad.SetActive(false);
@@ -36,11 +37,6 @@ public class JakeCutScene : MonoBehaviour
         {
             BeanBanditTransform.Translate(Vector3.right * runSpeed * Time.deltaTime);
             banditAnimator.SetFloat("speed", runSpeed);
-            //if(BeanBanditTransform.position.x >= bEndPos.position.x)
-            //{
-            //    banditEscape = false;
-           //     banditAnimator.SetFloat("speed", 0);
-            //}
         }
         if (escapeDone)
         {
@@ -54,6 +50,7 @@ public class JakeCutScene : MonoBehaviour
             fakeplayer.SetActive(false);
             player.SetActive(true);
             jManager.UnFreeze();
+            otherBeanBandit.SetActive(true);
         }
     }
 
