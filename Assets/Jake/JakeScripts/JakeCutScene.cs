@@ -11,7 +11,7 @@ public class JakeCutScene : MonoBehaviour
     private Animator banditAnimator, jumpPadAnim;
     [SerializeField] private float runSpeed;
     private bool banditEscape = false, escapeDone = false;
-    [SerializeField] private Transform bStartPos, bEndPos;
+    [SerializeField] private Transform bStartPos;
 
     // Start is called before the first frame update
     void Start()

@@ -14,6 +14,8 @@ TagManager:
   - waterTrigger
   - checkpoint
   - bandit
+  - Bullet
+  - superJump
   layers:
   - Default
   - TransparentFX

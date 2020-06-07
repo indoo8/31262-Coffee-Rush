@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class BeansCollision : MonoBehaviour
 {
+   // public GameObject jumpPad, wall1, wall2, wall3;
+
     //int beanCounter = 0;
     public JakeGameManager gManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       /* jumpPad.SetActive(false);
+        wall1.SetActive(false);
+        wall2.SetActive(false);
+        wall3.SetActive(false);*/
     }
 
     // Update is called once per frame
@@ -35,6 +40,12 @@ public class BeansCollision : MonoBehaviour
             //Debug.Log(beanCounter);
             //collect bean through manager script?
             gManager.CollectBean();
+            collision.gameObject.SetActive(false);
+        }
+
+        if(collision.gameObject.tag == "checkpoint")
+        {
+            gManager.nextCheckpoint();
             collision.gameObject.SetActive(false);
         }
     }

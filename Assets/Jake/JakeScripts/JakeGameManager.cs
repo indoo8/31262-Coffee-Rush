@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class JakeGameManager : MonoBehaviour
 {
     [SerializeField] private GameObject player, deathMessage, pauseMenu;
-    [SerializeField] private Transform playerStartPos;
-    [SerializeField] private GameObject[] coffeeBeans;
+   // [SerializeField] private Transform playerStartPos;
+    [SerializeField] private Transform[] checkpoints;
     [SerializeField] private Animator pAnimator, cmAnimator;
-    //private RileyInputManager iManager;
+    [SerializeField] private int totalBeans, checkpoint;
     private JakeInputManager uManager;
     private int beanCount = 0;
     public bool paused = false, dead = false;
@@ -18,10 +18,11 @@ public class JakeGameManager : MonoBehaviour
     {
         //  iManager = gameObject.GetComponent<RileyInputManager>();
         uManager = gameObject.GetComponent<JakeInputManager>();
-        player.transform.position = playerStartPos.position;
+        player.transform.position = checkpoints[0].position;
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        checkpoint = 0;
     }
 
     // Update is called once per frame
@@ -33,18 +34,14 @@ public class JakeGameManager : MonoBehaviour
     public void Respawn()
     {
         pAnimator.SetTrigger("respawn");
-        player.transform.position = playerStartPos.position;
+        player.transform.position = checkpoints[checkpoint].position;
         // iManager.UnFreeze();
         uManager.UnFreeze();
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
         dead = false;
         Time.timeScale = 1;
-
-        for (int i = 0; i < coffeeBeans.Length; i++)
-        {
-            coffeeBeans[i].SetActive(true);
-        }
+        
     }
 
     public void PlayerDie()
@@ -54,6 +51,11 @@ public class JakeGameManager : MonoBehaviour
         uManager.Freeze();
         deathMessage.SetActive(true);
         dead = true;
+    }
+
+    public void nextCheckpoint()
+    {
+        checkpoint++;
     }
 
     public void CollectBean()
