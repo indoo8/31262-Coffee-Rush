@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class JumpPad : MonoBehaviour
 {
     bool isBounce;
-    GameObject player;
+    GameObject player, bandit;
     public Animator anim;
     //public float bigJump;
    // public Rigidbody2D rb;
@@ -43,16 +43,20 @@ public class JumpPad : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("bandit"))
         {
             isBounce = true;
         }
+        bandit = collision.gameObject;
         player = collision.gameObject;
         if (isBounce)
         {
             anim.SetBool("Spring", true);
             willBounce();
         }
+        //for the cutscene
+
+
        
     }
     void OnTriggerExit2D(Collider2D collision)
@@ -68,6 +72,7 @@ public class JumpPad : MonoBehaviour
     void willBounce()
     {
             player.GetComponent<Rigidbody2D>().velocity = velocity;
+            bandit.GetComponent<Rigidbody2D>().velocity = velocity;
             Debug.Log("Bouncing");
         //StartCoroutine("PostBounce");
     }

@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class JakeCutScene : MonoBehaviour
 {
-    [SerializeField] GameObject BeanBandit, jumpPad, jumpPad2;
+    [SerializeField] GameObject player, fakeplayer, BeanBandit, jumpPad, jumpPad2, fakejumpPad, fakejumpPad2, fakejumpPad3;
     [SerializeField] private JakeInputManager jManager;
     [SerializeField] private JakeGameManager jgManager;
     private Transform cPlayerTransform, BeanBanditTransform;
     private Animator banditAnimator, jumpPadAnim;
-    [SerializeField] private float runSpeed, upSpeed;
-    private bool banditEscape = false, banditJump = false, stopJump = false, beanRun = false;
-    [SerializeField] private Transform bStartPos, bEndPos;
+    [SerializeField] private float runSpeed;
+    private bool banditEscape = false, escapeDone = false;
+    [SerializeField] private Transform bStartPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        fakeplayer.SetActive(true);
         jManager.Freeze();
+        jumpPad.SetActive(false);
+        jumpPad2.SetActive(false);
 
         BeanBanditTransform = BeanBandit.transform;
         Vector3 banditPos = BeanBanditTransform.position;
         banditPos.x = bStartPos.position.x;
         banditAnimator = BeanBandit.GetComponent<Animator>();
-        jumpPadAnim = jumpPad.GetComponent<Animator>();
 
         StartCoroutine(startCutScene());
     }
@@ -34,30 +36,24 @@ public class JakeCutScene : MonoBehaviour
         {
             BeanBanditTransform.Translate(Vector3.right * runSpeed * Time.deltaTime);
             banditAnimator.SetFloat("speed", runSpeed);
-            if(BeanBanditTransform.position.x >= bEndPos.position.x)
-            {
-                banditEscape = false;
-                banditAnimator.SetFloat("speed", 0);
-            }
+            //if(BeanBanditTransform.position.x >= bEndPos.position.x)
+            //{
+            //    banditEscape = false;
+           //     banditAnimator.SetFloat("speed", 0);
+            //}
         }
-        if (banditJump)
+        if (escapeDone)
         {
-            jumpPadAnim.SetBool("Spring", true);
-            StartCoroutine(jumping());
-
-            BeanBanditTransform.Translate(Vector3.up * upSpeed * Time.deltaTime);
-        }
-        if (beanRun)
-        {
-            banditJump = false;
-            BeanBanditTransform.Translate(Vector3.right * runSpeed * Time.deltaTime);
-            banditAnimator.SetFloat("speed", runSpeed);
-        }
-
-
-        if (stopJump)
-        {
-            jumpPadAnim.SetBool("Spring", false);
+            banditEscape = false;
+            BeanBandit.SetActive(false);
+            fakejumpPad.SetActive(false);
+            fakejumpPad2.SetActive(false);
+            fakejumpPad3.SetActive(false);
+            jumpPad.SetActive(true);
+            jumpPad2.SetActive(true);
+            fakeplayer.SetActive(false);
+            player.SetActive(true);
+            jManager.UnFreeze();
         }
     }
 
@@ -65,14 +61,7 @@ public class JakeCutScene : MonoBehaviour
     {
         yield return new WaitForSeconds(0f);
         banditEscape = true;
-        yield return new WaitForSeconds(1f);
-        banditJump = true;
-        yield return new WaitForSeconds(0.53f);
-        beanRun = true;
-    }
-    IEnumerator jumping()
-    {
-        yield return new WaitForSeconds(0.15f);
-        stopJump = true;
+        yield return new WaitForSeconds(5f);
+        escapeDone = true;
     }
 }
