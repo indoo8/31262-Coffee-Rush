@@ -1145,7 +1145,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1901597218}
     m_Modifications:
     - target: {fileID: 5444760145549896996, guid: 643869a817847f243b69076843f6a319,
         type: 3}
@@ -1155,22 +1155,22 @@ PrefabInstance:
     - target: {fileID: 5444760145549896997, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_Name
-      value: TeleporterOut2
+      value: TeleporterOut4
       objectReference: {fileID: 0}
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 68.49
+      value: 64.051025
       objectReference: {fileID: 0}
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.97
+      value: 18.775816
       objectReference: {fileID: 0}
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 131.50584
+      value: 263.0117
       objectReference: {fileID: 0}
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
@@ -3601,6 +3601,12 @@ MonoBehaviour:
   portalOut: {fileID: 1987751890}
   flipXSpeed: 0
   flipYSpeed: 0
+--- !u!4 &590996793 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
+    type: 3}
+  m_PrefabInstance: {fileID: 853650188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &592362640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7796691562514665030, guid: 04e6939e1856001428c3233e40989aa0,
@@ -4769,27 +4775,27 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1901597218}
     m_Modifications:
     - target: {fileID: 5444760145549896997, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_Name
-      value: Teleporter2
+      value: Teleporter4
       objectReference: {fileID: 0}
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.45
+      value: 60.01103
       objectReference: {fileID: 0}
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.88
+      value: 12.685816
       objectReference: {fileID: 0}
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 131.50584
+      value: 263.0117
       objectReference: {fileID: 0}
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
@@ -4814,7 +4820,7 @@ PrefabInstance:
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
         type: 3}
@@ -6864,7 +6870,7 @@ PrefabInstance:
     - target: {fileID: 465218081115464948, guid: 6b1a047be7283be4d989b22a68a546b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 465218081115464948, guid: 6b1a047be7283be4d989b22a68a546b0,
         type: 3}
@@ -11023,6 +11029,8 @@ Transform:
   - {fileID: 671244990}
   - {fileID: 750056129}
   - {fileID: 919356514}
+  - {fileID: 590996793}
+  - {fileID: 1987751895}
   - {fileID: 967323749}
   - {fileID: 300295758}
   m_Father: {fileID: 1537082408}
@@ -11627,6 +11635,12 @@ PrefabInstance:
 --- !u!1 &1987751890 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5444760145549896997, guid: 643869a817847f243b69076843f6a319,
+    type: 3}
+  m_PrefabInstance: {fileID: 155764290}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1987751895 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5444760145549897177, guid: 643869a817847f243b69076843f6a319,
     type: 3}
   m_PrefabInstance: {fileID: 155764290}
   m_PrefabAsset: {fileID: 0}
