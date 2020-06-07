@@ -60,7 +60,7 @@ public class TutorialGameManager : MonoBehaviour
     public void CollectBean()
     {
         beanCount++;
-        Debug.Log("beanCount = " + beanCount);
+        //Debug.Log("beanCount = " + beanCount);
     }
 
     public void EndLevel()
