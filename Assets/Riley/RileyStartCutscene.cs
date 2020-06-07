@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RileyStartCutscene : MonoBehaviour
 {
-    [SerializeField] private GameObject cBandit, cTrapdoor, cTopFloor, cTrapText, cFoundHimText;
+    [SerializeField] private GameObject cBandit, cTrapdoor, cTopFloor, cTrapText, cFoundHimText, cArrows;
     [SerializeField] private RileyGameManager gManager;
     [SerializeField] private RileyInputManager iManager;
     private Animator cBanditAnimator;
@@ -54,9 +54,11 @@ public class RileyStartCutscene : MonoBehaviour
         yield return new WaitForSeconds(1f);
         cFoundHimText.SetActive(false);
         cTrapdoor.SetActive(false);
+        cArrows.SetActive(true);
         iManager.UnFreeze();
         yield return new WaitForSeconds(5f);
         cTrapText.SetActive(false);
         cTopFloor.SetActive(false);
+        cTrapdoor.SetActive(true);
     }
 }
