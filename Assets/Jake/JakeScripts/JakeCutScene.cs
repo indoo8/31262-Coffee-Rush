@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JakeCutScene : MonoBehaviour
 {
-    [SerializeField] GameObject BeanBandit, jumpPad, jumpPad2;
+    [SerializeField] GameObject BeanBandit, jumpPad, jumpPad2, fakejumpPad, fakejumpPad2, fakejumpPad3;
     [SerializeField] private JakeInputManager jManager;
     [SerializeField] private JakeGameManager jgManager;
     private Transform cPlayerTransform, BeanBanditTransform;
@@ -17,12 +17,13 @@ public class JakeCutScene : MonoBehaviour
     void Start()
     {
         jManager.Freeze();
+        jumpPad.SetActive(false);
+        jumpPad2.SetActive(false);
 
         BeanBanditTransform = BeanBandit.transform;
         Vector3 banditPos = BeanBanditTransform.position;
         banditPos.x = bStartPos.position.x;
         banditAnimator = BeanBandit.GetComponent<Animator>();
-        jumpPadAnim = jumpPad.GetComponent<Animator>();
 
         StartCoroutine(startCutScene());
     }
@@ -40,39 +41,11 @@ public class JakeCutScene : MonoBehaviour
                 banditAnimator.SetFloat("speed", 0);
             }
         }
-        if (banditJump)
-        {
-            jumpPadAnim.SetBool("Spring", true);
-            StartCoroutine(jumping());
-
-            BeanBanditTransform.Translate(Vector3.up * upSpeed * Time.deltaTime);
-        }
-        if (beanRun)
-        {
-            banditJump = false;
-            BeanBanditTransform.Translate(Vector3.right * runSpeed * Time.deltaTime);
-            banditAnimator.SetFloat("speed", runSpeed);
-        }
-
-
-        if (stopJump)
-        {
-            jumpPadAnim.SetBool("Spring", false);
-        }
     }
 
     IEnumerator startCutScene()
     {
         yield return new WaitForSeconds(0f);
         banditEscape = true;
-        yield return new WaitForSeconds(1f);
-        banditJump = true;
-        yield return new WaitForSeconds(0.53f);
-        beanRun = true;
-    }
-    IEnumerator jumping()
-    {
-        yield return new WaitForSeconds(0.15f);
-        stopJump = true;
     }
 }
