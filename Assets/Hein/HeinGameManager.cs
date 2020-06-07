@@ -2,27 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HeinGameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject player, deathMessage, pauseMenu;
+    [SerializeField] private GameObject player, deathMessage, pauseMenu, endMenuScreen;
     [SerializeField] private Transform playerStartPos;
+    [SerializeField] private Text endMenuScore, endMenuTotal;
+    [SerializeField] private int totalBeans;
     [SerializeField] private GameObject[] coffeeBeans;
-    [SerializeField] private RisingWater risingWater;
     [SerializeField] private Animator pAnimator, cmAnimator;
     private HeinInputManager iManager;
     private int beanCount = 0;
     public bool paused = false, dead = false;
-    // Start is called before the first frame update
+
     void Start()
     {
-        Debug.Log("Started");
         iManager = gameObject.GetComponent<HeinInputManager>();
         player.transform.position = playerStartPos.position;
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
+        endMenuScreen.SetActive(false);
         Time.timeScale = 1;
-        
+        endMenuTotal.text = "out of " + totalBeans + " Coffee Beans.";
+
     }
 
     // Update is called once per frame
@@ -33,12 +36,12 @@ public class HeinGameManager : MonoBehaviour
 
     public void Respawn()
     {
-        Debug.Log("Respawned");
         pAnimator.SetTrigger("respawn");
         player.transform.position = playerStartPos.position;
         iManager.UnFreeze();
         deathMessage.SetActive(false);
         pauseMenu.SetActive(false);
+        endMenuScreen.SetActive(false);
         dead = false;
         Time.timeScale = 1;
         for (int i=0; i<coffeeBeans.Length; i++)
@@ -49,7 +52,6 @@ public class HeinGameManager : MonoBehaviour
 
     public void PlayerDie()
     {
-        Debug.Log("Died");
         pAnimator.SetTrigger("dead");
         iManager.Freeze();
         deathMessage.SetActive(true);
@@ -58,21 +60,14 @@ public class HeinGameManager : MonoBehaviour
 
     public void CollectBean()
     {
-        Debug.Log("Collected Bean");
         beanCount++;
-        Debug.Log("beanCount = " + beanCount);
+        //Debug.Log("beanCount = " + beanCount);
     }
-
-    public void ReachCoffeeMachine()
+    public void EndLevelScreen()
     {
-        if (beanCount == 3)
-        {
-
-        }
-        else
-        {
-
-        }
+        endMenuScore.text = "You collected " + beanCount;
+        endMenuScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void PauseGame()
@@ -92,11 +87,21 @@ public class HeinGameManager : MonoBehaviour
         Time.timeScale = 1;
         paused = false;
     }
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(3);
+    }
 
     public void MainMenu()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+    public void NextLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(4);
     }
 
     public void QuitGame()
