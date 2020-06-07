@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BeansCollision : MonoBehaviour
 {
-    public GameObject jumpPad, wall, jump2;
+    public GameObject jumpPad, wall, jump2, breakWall, sign;
 
     //int beanCounter = 0;
     public JakeGameManager gManager;
@@ -13,7 +13,9 @@ public class BeansCollision : MonoBehaviour
     void Start()
     {
         jumpPad.SetActive(false);
+        sign.SetActive(true);
         jump2.SetActive(false);
+        breakWall.SetActive(true);
         wall.SetActive(false);
     }
 
@@ -31,13 +33,8 @@ public class BeansCollision : MonoBehaviour
             gManager.PlayerDie();
         }
 
-
-
         if(collision.gameObject.tag == "bean")
         {
-            //beanCounter++;
-            //Debug.Log(beanCounter);
-            //collect bean through manager script?
             gManager.CollectBean();
             collision.gameObject.SetActive(false);
         }
@@ -58,7 +55,17 @@ public class BeansCollision : MonoBehaviour
             wall.SetActive(true);
             jump2.SetActive(true);
         }
+        
+        if(collision.gameObject.tag == "wallBreak")
+        {
+            breakWall.SetActive(false);
+            sign.SetActive(false);
+        }
 
+        if(collision.gameObject.tag == "endLevel")
+        {
+            gManager.EndLevel();
+        }
     }
 
 }
