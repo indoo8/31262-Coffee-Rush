@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-    public Transform Firepoint;
+    public Transform FirePoint;
     public GameObject bulletPrefab;
 
 
@@ -12,13 +12,13 @@ public class Weapon : MonoBehaviour {
     void Update() {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            Shoot ();
         }
     }
 
-    void Shoot()
+    void Shoot ()
     {
-        Instantiate(bulletPrefab, Firepoint.position, Firepoint.rotation);
+        Instantiate(bulletPrefab, FirePoint.position, FirePoint.rotation);
         //shooting logic 
     }
 

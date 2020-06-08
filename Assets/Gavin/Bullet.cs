@@ -8,40 +8,25 @@ public class Bullet : MonoBehaviour {
     public float speed = 20f;
     public int damage = 40;
     public Rigidbody2D rb;
-    public GameObject impactEffect;
+    public gameObject impactEffect; 
 
     // Start is called before the first frame update
-    void Start()  {
+    void Start ()  {
         rb.velocity = transform.right * speed;
     }
-    
-//<<<<<<< HEAD
- //   void OnTriggerEnter2D (Object1 hitInfo)
- //   {
- //       Enemy enemy = hitInfo.GetComponent<Enemy>();
- //       if (enemy != null)
-  //      {
-  //          enemy.TakeDamage(damage);
-  //      }
 
- //       Instantiate(impactEffect, transform.position, transform.rotation);
 
-  //      Destroy(gameObject);
-  //  }
-//=======
-   // void OnTriggerEnter2D (Object1 hitInfo)
-  //  {
- //       Enemy enemy = hitInfo.GetComponent<Enemy>();
-  //      if (enemy != null)
-  //      {
-  //          enemy.TakeDamage(damage);
-  //      }
+    void OnTriggerEnter2D(Collider2D hitInfo)
+   {
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
 
-   //     Instantiate(impactEffect, transform.position, transform.rotation);
+        Instantiate(impactEffect, transform.position, transform.rotation);
 
-  //      Destroy(gameObject);
-  //  }
-//>>>>>>> 050524edc9a5c2cb57798742bfd8c2db87871626
-
+        Destroy(gameObject);
+    }
 
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GavinPlayerCollisions : MonoBehaviour
+public class GavinCollisionsScript : MonoBehaviour
 {
-    [SerializeField] private GavinGameManager gManager;
+    public GavinGameManager gManager;
 
     private void Start()
     {
@@ -14,7 +14,7 @@ public class GavinPlayerCollisions : MonoBehaviour
     {
         if (collision.gameObject.tag == "death")
         {
-            
+            Debug.Log("collided with " + collision.gameObject.name);
             gManager.PlayerDie();
         }
         if (collision.gameObject.tag == "bean")
@@ -22,10 +22,15 @@ public class GavinPlayerCollisions : MonoBehaviour
             gManager.CollectBean();
             collision.gameObject.SetActive(false);
         }
+ //       if (collision.gameObject.tag == "endLevel")
+ //       {
+ //           Debug.Log("endLevelTrigger");
+ //           gManager.EndLevel();
+ //       }
  //       if (collision.gameObject.tag == "checkpoint")
  //       {
-  //          gManager.NextCheckpoint();
-   //         collision.gameObject.SetActive(false);
-   //     }
+ //           gManager.NextCheckpoint();
+ //           collision.gameObject.SetActive(false);
+ //       }
     }
 }
