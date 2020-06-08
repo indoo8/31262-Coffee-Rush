@@ -6,10 +6,7 @@ public class GavinCollisionsScript : MonoBehaviour
 {
     public GavinGameManager gManager;
 
-    private void Start()
-    {
-    }
-
+ 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "death")
@@ -22,15 +19,11 @@ public class GavinCollisionsScript : MonoBehaviour
             gManager.CollectBean();
             collision.gameObject.SetActive(false);
         }
- //       if (collision.gameObject.tag == "endLevel")
- //       {
- //           Debug.Log("endLevelTrigger");
- //           gManager.EndLevel();
- //       }
- //       if (collision.gameObject.tag == "checkpoint")
- //       {
- //           gManager.NextCheckpoint();
- //           collision.gameObject.SetActive(false);
- //       }
+        if (collision.gameObject.tag == "endLevel")
+        {
+            Debug.Log("endLevelTrigger");
+            gManager.EndLevelScreen();
+        }
+        
     }
 }
