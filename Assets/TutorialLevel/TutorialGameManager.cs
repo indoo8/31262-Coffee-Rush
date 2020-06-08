@@ -107,6 +107,6 @@ public class TutorialGameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         endMenuScreen.SetActive(false);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(5);
     }
 }
