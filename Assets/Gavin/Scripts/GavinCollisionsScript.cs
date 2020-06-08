@@ -11,7 +11,7 @@ public class GavinCollisionsScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "death")
         {
-            Debug.Log("collided with " + collision.gameObject.name);
+           // Debug.Log("collided with " + collision.gameObject.name);
             gManager.PlayerDie();
         }
         if (collision.gameObject.tag == "bean")
@@ -21,7 +21,7 @@ public class GavinCollisionsScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "endLevel")
         {
-            Debug.Log("endLevelTrigger");
+          //  Debug.Log("endLevelTrigger");
             gManager.EndLevelScreen();
         }
         
